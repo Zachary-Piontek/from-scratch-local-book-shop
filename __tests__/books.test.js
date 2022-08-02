@@ -13,6 +13,16 @@ describe('backend-express-template routes', () => {
     expect(resp.body.length).toEqual(6);
   });
 
+  it('#GET /books:id returns a book', async () => {
+    const resp = await request(app).get('/books/1');
+    console.log(resp.body);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      title: expect.any(String),
+      released: expect.any(Number),
+    });
+  });
+
   afterAll(() => {
     pool.end();
   });
