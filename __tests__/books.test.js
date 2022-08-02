@@ -10,11 +10,7 @@ describe('backend-express-template routes', () => {
 
   it('#GET /books returns list of books', async () => {
     const resp = await request(app).get('/books');
-    expect(resp.body).toEqual({
-      id: expect.any(String),
-      title: expect.any(String),
-      released: expect.any(String),
-    });
+    expect(resp.body.length).toEqual(6);
   });
 
   afterAll(() => {
