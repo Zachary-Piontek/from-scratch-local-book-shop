@@ -1,13 +1,14 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
-DROP TABLE IF EXISTS author;
-DROP TABLE IF EXISTS books;
-DROP TABLE IF EXISTS author_books_wrote;
 
-CREATE TABLE author (
+DROP TABLE IF EXISTS author_books_wrote; --error look up CASCADE and what is does?
+DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS books;
+
+CREATE TABLE authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR,
-    dob INT,
+    dob VARCHAR,
     pob VARCHAR
 );
 
@@ -23,10 +24,10 @@ CREATE TABLE author_books_wrote(
     book_id BIGINT,
     FOREIGN KEY (author_id) REFERENCES authors(id),
     FOREIGN KEY (book_id) REFERENCES books(id)
-)
+);
 
 
-INSERT INTO author (
+INSERT INTO authors (
     name,
     dob,
     pob
