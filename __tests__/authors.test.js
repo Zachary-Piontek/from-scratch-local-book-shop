@@ -16,15 +16,25 @@ describe('backend-express-template routes', () => {
   it('#GET /authors:id returns a authors', async () => {
     const resp = await request(app).get('/authors/1');
     const authorOne = {
+      books: [{
+        id: 1,
+        title: 'The Bitcoin Standard',
+        released: 2018,
+      },
+      {
+        id: 2,
+        title: 'The Fiat Standard',
+        released: 2022,
+      }],
+      dob: 'Not Found',
       id: '1',
       name: 'Saifedean Ammous',
-      dob: 'Not Found',
       pob: 'Palestine'
     };
     expect(resp.body).toEqual(authorOne);
   });
 
-  it('POST /author create new author', async () => {
+  it('POST /authors create new author', async () => {
     const resp = await request(app)
       .post('/authors')
       .send({ name: 'Jordan Peterson', dob: '02-25-1960', pob: 'Canada' });
@@ -35,6 +45,7 @@ describe('backend-express-template routes', () => {
       dob: '02-25-1960',
       pob: 'Canada'
     });
+    console.log(resp.body);
   });
 
   afterAll(() => {
