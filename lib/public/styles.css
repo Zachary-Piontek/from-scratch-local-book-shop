@@ -1,0 +1,21 @@
+body {
+    display: grid;
+    justify-content: center;
+}
+
+header {
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+    margin-bottom: 1em;
+}
+
+main {
+    display: grid;
+    width: 85vw;
+    text-align: center;
+}
+
+p {
+    font-style: italic;
+}

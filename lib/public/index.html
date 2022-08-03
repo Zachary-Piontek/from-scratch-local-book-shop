@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Book Shop</title>
+  </head>
+  <body>
+    <header>
+      <h1>Book Shop</h1>
+    </header>
+    <main>
+      <p>This API uses a list of Books. The routes are
+        as follows below.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>Method</th>
+            <th>Description</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><pre>/books</pre></td>
+            <td>GET</td>
+            <td>Gets a list of Books</td>
+            <td>
+              <a href="/books" target="_blank">List of books</a>
+            </td>
+          </tr>
+          <tr>
+            <td><pre>/books/:id</pre></td>
+            <td>GET</td>
+            <td>Returns the detail about the Book.</td>
+            <td>
+              <a href="/books/1" target="_blank">Gets a book</a>
+            </td>
+          </tr>
+          <tr>
+            <td><pre>/authors</pre></td>
+            <td>GET</td>
+            <td>Gets a list of Authors</td>
+            <td>
+              <a href="/authors" target="_blank">List of authors</a>
+            </td>
+          </tr>
+          <tr>
+            <td><pre>/authors/:id</pre></td>
+            <td>GET</td>
+            <td>Returns the detail about the Author.</td>
+            <td>
+              <a href="/authors/1" target="_blank">Gets a author</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
